@@ -247,7 +247,7 @@ ul {
 
 .hero {
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url('images/2.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.2)), url('images/2-min.jpg');
     background-position: center;
     background-size: cover;
     display: grid;

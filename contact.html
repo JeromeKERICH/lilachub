@@ -8,29 +8,40 @@
 </head>
 <body>
     <div class="contact-container">
-        <div class="contact-details">
-            <h2>Contact Us</h2>
+        <div class="contact-background">
+            <h1>Need something? Reach Out</h1>
+        </div>
+        <div class="contact-info">
+            <h2>Contact Details</h2>
             <p><strong>Address:</strong> Kilifi County, Kenya</p>
             <p><strong>Phone:</strong> (+254) 716 668 668</p>
-            <p><strong>Email:</strong> info@kitumbuic.com</p>
-            <p><strong>WhatsApp:</strong> <a href="https://wa.me/254716668668">Chat with us</a></p>
+            <p><strong>What's App:</strong> <a href="https://wa.me/254716668668">Chat With Us</a></p>
         </div>
+
+
+        <!--contact form-->
+
+        
         <div class="contact-form">
             <h2>Send Us a Message</h2>
-            <form action="#" method="post">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
+            <form>
+                <div class="form-group">
+                    <input type="text" name="name" required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" required></textarea>
+                    <label for="message">Message</label>
+                </div>
                 <button type="submit">Send</button>
             </form>
         </div>
     </div>
+    
 
     <script src="script.js"></script>
 </body>

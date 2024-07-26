@@ -47,6 +47,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // script.js
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const readMoreBtn = document.querySelector('.read-more');
+    const moreContent = document.querySelector('.more-content');
+
+    readMoreBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+            moreContent.style.display = 'inline';
+            readMoreBtn.textContent = 'Read Less';
+        } else {
+            moreContent.style.display = 'none';
+            readMoreBtn.textContent = 'Read More';
+        }
+    });
+});
+
+
 // script.js
 
 document.addEventListener('DOMContentLoaded', function() {

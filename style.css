@@ -424,7 +424,7 @@ h2 {
 .about {
     text-align: center;
     align-items: center;
-    padding: 10px 0;
+    padding: 20px 0;
     font-size: 24px;
 }
 
@@ -445,6 +445,7 @@ h2 {
     flex: 1;
     padding: 20px;
 }
+
 
 .content h3 {
     color: var(--c-bluish);
@@ -472,6 +473,22 @@ h2 {
     border-radius: 10px;
 }
 
+.more-content {
+    display: none;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--c-purple);
+    text-decoration: none;
+    font-style: italic;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
 
     .about h2 {
@@ -481,6 +498,10 @@ h2 {
     .about-con {
         flex-direction: column;
         width: 100%;
+    }
+
+    .about-con .content p {
+        padding: 0;
     }
 
     .image, .content {
@@ -495,12 +516,6 @@ h2 {
 /*services*/
 
 
-.services-section {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-  }
-
- 
   .services-section {
     padding: 50px 20px;
     background-color: #f9f9f9;

@@ -42,3 +42,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+// script.js
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceBoxes = document.querySelectorAll('.service-box');
+  
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+  
+    function handleScroll() {
+      serviceBoxes.forEach((box, index) => {
+        if (isElementInViewport(box)) {
+          setTimeout(() => {
+            box.style.opacity = 1;
+            box.style.transform = 'translateY(0)';
+          }, index * 200); // Delay based on the index
+        }
+      });
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check on page load
+  });
+  

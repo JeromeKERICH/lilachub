@@ -95,3 +95,32 @@ document.addEventListener('DOMContentLoaded', function() {
     handleScroll(); // Initial check on page load
   });
   
+
+  //visuals
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const sliderContainer = document.querySelector('.visual-container');
+    const slides = document.querySelectorAll('.visual-box');
+    let index = 0;
+
+    function updateSlider() {
+        const offset = -index * 100; // Adjust the offset based on the slide height
+        sliderContainer.style.transform = `translateY(${offset}%)`;
+    }
+
+    function nextSlide() {
+        index++;
+        if (index >= slides.length) {
+            index = 0;
+        }
+        updateSlider();
+    }
+
+    function prevSlide() {
+        index--;
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+        updateSlider();
+    }
+});

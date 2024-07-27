@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// script.js
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// script.js
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const serviceBoxes = document.querySelectorAll('.service-box');
@@ -86,41 +86,39 @@ document.addEventListener('DOMContentLoaded', function() {
           setTimeout(() => {
             box.style.opacity = 1;
             box.style.transform = 'translateY(0)';
-          }, index * 200); // Delay based on the index
+          }, index * 200); 
         }
       });
     }
   
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check on page load
+    handleScroll(); 
   });
   
 
   //visuals
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const sliderContainer = document.querySelector('.visual-container');
-    const slides = document.querySelectorAll('.visual-box');
-    let index = 0;
+  document.addEventListener("DOMContentLoaded", function () {
+    const visualBoxes = document.querySelectorAll(".visual-box");
+    const prevArrow = document.querySelector(".prev-arrow");
+    const nextArrow = document.querySelector(".next-arrow");
+    let currentIndex = 0;
 
-    function updateSlider() {
-        const offset = -index * 100; // Adjust the offset based on the slide height
-        sliderContainer.style.transform = `translateY(${offset}%)`;
+    function showVisual(index) {
+        visualBoxes.forEach((box, i) => {
+            box.classList.toggle("active", i === index);
+        });
     }
 
-    function nextSlide() {
-        index++;
-        if (index >= slides.length) {
-            index = 0;
-        }
-        updateSlider();
-    }
+    prevArrow.addEventListener("click", function () {
+        currentIndex = (currentIndex - 1 + visualBoxes.length) % visualBoxes.length;
+        showVisual(currentIndex);
+    });
 
-    function prevSlide() {
-        index--;
-        if (index < 0) {
-            index = slides.length - 1;
-        }
-        updateSlider();
-    }
+    nextArrow.addEventListener("click", function () {
+        currentIndex = (currentIndex + 1) % visualBoxes.length;
+        showVisual(currentIndex);
+    });
+
+    showVisual(currentIndex); // Initialize the first visual box
 });

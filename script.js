@@ -124,6 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Whats App Float
+
 document.querySelector('.whatsapp-float').addEventListener('click', function () {
     this.classList.add('clicked');
     setTimeout(() => this.classList.remove('clicked'), 300);

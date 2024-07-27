@@ -126,7 +126,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Whats App Float
 
-document.querySelector('.whatsapp-float').addEventListener('click', function () {
-    this.classList.add('clicked');
-    setTimeout(() => this.classList.remove('clicked'), 300);
+window.addEventListener('scroll', function() {
+    const heroSection = document.querySelector('.hero');
+    const whatsappHeading = document.querySelector('.whatsapp-heading');
+
+    const heroSectionHeight = heroSection.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    
+    if (window.innerWidth <= 768) {
+        if (scrollPosition > heroSectionHeight) {
+            whatsappHeading.style.display = 'block';
+        } else {
+            whatsappHeading.style.display = 'none';
+        }
+    } else {
+        
+        whatsappHeading.style.display = 'block';
+    }
 });

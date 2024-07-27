@@ -678,3 +678,30 @@ h2 {
         display: grid;
     }
 }
+
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    z-index: 1000;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.whatsapp-float.clicked {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}

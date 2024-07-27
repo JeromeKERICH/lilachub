@@ -120,5 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
         showVisual(currentIndex);
     });
 
-    showVisual(currentIndex); // Initialize the first visual box
+    showVisual(currentIndex); 
+});
+
+
+document.querySelector('.whatsapp-float').addEventListener('click', function () {
+    this.classList.add('clicked');
+    setTimeout(() => this.classList.remove('clicked'), 300);
 });

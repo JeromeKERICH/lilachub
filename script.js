@@ -131,19 +131,21 @@ window.addEventListener('scroll', function() {
     const heroSection = document.querySelector('.hero');
     const whatsappHeading = document.querySelector('.whatsapp-heading');
 
+    if (!heroSection || !whatsappHeading) {
+        return; 
+    }
+
     const heroSectionHeight = heroSection.offsetHeight;
     const scrollPosition = window.scrollY;
 
-    
     if (window.innerWidth <= 768) {
         if (scrollPosition > heroSectionHeight) {
-            whatsappHeading.style.display = 'block';
+            whatsappHeading.style.display = 'block'; 
         } else {
-            whatsappHeading.style.display = 'none';
+            whatsappHeading.style.display = 'none'; 
         }
     } else {
-        
-        whatsappHeading.style.display = 'block';
+        whatsappHeading.style.display = 'block'; 
     }
 });
 
@@ -157,13 +159,13 @@ document.addEventListener("DOMContentLoaded", function() {
     function animateCount(element, max) {
         let count = 0;
         const interval = setInterval(() => {
-            count += Math.ceil(max / 100); // Adjust this value to speed up or slow down the counting
+            count += Math.ceil(max / 100); 
             if (count >= max) {
                 count = max;
                 clearInterval(interval);
             }
             element.textContent = count;
-        }, 20); // Adjust this value to speed up or slow down the counting
+        }, 20); 
     }
 
     counters.forEach(counter => {

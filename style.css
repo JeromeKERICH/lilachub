@@ -664,7 +664,7 @@ h2 {
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-    display: none; /* Hide arrows by default */
+    display: none;
 }
 
 .prev-arrow {
@@ -682,16 +682,16 @@ h2 {
 
     .visual-box {
         flex: 1 1 100%;
-        display: none; /* Hide all visual boxes by default */
+        display: none; 
         min-width: 90%;
     }
 
     .visual-box.active {
-        display: block; /* Show only the active visual box */
+        display: block; 
     }
 
     .prev-arrow, .next-arrow {
-        display: block; /* Show arrows on small screens */
+        display: block; 
     }
 
     .visuals-section h2 {
@@ -707,7 +707,7 @@ h2 {
 
 .whatsapp-heading {
     position: fixed;
-    bottom: 40px; /* Adjust as needed to position */
+    bottom: 40px;
     right: 10px;
     background-color: lightgreen;
     border-radius: 5px;

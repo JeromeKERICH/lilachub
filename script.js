@@ -155,23 +155,46 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const counters = document.querySelectorAll('.count');
+    const arrowIndicators = document.querySelectorAll('.arrow-indicator');
+    const statistics = document.querySelector('.statistics');
 
     function animateCount(element, max) {
         let count = 0;
         const interval = setInterval(() => {
-            count += Math.ceil(max / 100); 
+            count += Math.ceil(max / 100);
             if (count >= max) {
                 count = max;
                 clearInterval(interval);
             }
             element.textContent = count;
-        }, 20); 
+        }, 20);
     }
 
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const max = parseInt(counter.getAttribute('data-max'), 10);
+                animateCount(counter, max);
+                observer.unobserve(counter); // Stop observing once the counter has been animated
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+        threshold: 0.5 // Adjust this value as needed
+    });
+
     counters.forEach(counter => {
-        const max = parseInt(counter.getAttribute('data-max'), 10);
-        animateCount(counter, max);
+        observer.observe(counter);
+    });
+
+    statistics.addEventListener('scroll', function() {
+        const maxScrollLeft = statistics.scrollWidth - statistics.clientWidth;
+        if (statistics.scrollLeft >= maxScrollLeft) {
+            arrowIndicators.forEach(arrow => arrow.style.display = 'none'); // Hide arrows when scrolled to end
+        } else {
+            arrowIndicators.forEach(arrow => arrow.style.display = 'block'); // Show arrows when not at end
+        }
     });
 });
-
-

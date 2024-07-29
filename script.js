@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const readMoreBtn = document.querySelector('.read-more');
     const moreContent = document.querySelector('.more-content');
@@ -145,3 +146,30 @@ window.addEventListener('scroll', function() {
         whatsappHeading.style.display = 'block';
     }
 });
+
+
+//reviews
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const counters = document.querySelectorAll('.count');
+
+    function animateCount(element, max) {
+        let count = 0;
+        const interval = setInterval(() => {
+            count += Math.ceil(max / 100); // Adjust this value to speed up or slow down the counting
+            if (count >= max) {
+                count = max;
+                clearInterval(interval);
+            }
+            element.textContent = count;
+        }, 20); // Adjust this value to speed up or slow down the counting
+    }
+
+    counters.forEach(counter => {
+        const max = parseInt(counter.getAttribute('data-max'), 10);
+        animateCount(counter, max);
+    });
+});
+
+

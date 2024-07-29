@@ -79,7 +79,7 @@ h1 {
     border-radius: 5px;
 }
 
-.product-item button {
+.product-item .button {
     bottom: 10px;
     background-color: #007bff;
     color: white;
@@ -87,9 +87,10 @@ h1 {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    text-decoration: none;
 }
 
-.product-item button:hover {
+.product-item .button:hover {
     background-color: #0056b3;
 }
 

@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
           setTimeout(() => {
             box.style.opacity = 1;
             box.style.transform = 'translateY(0)';
-          }, index * 200); 
+          }, index * 100); 
         }
       });
     }

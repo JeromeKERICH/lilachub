@@ -43,6 +43,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//hero section
+
+document.addEventListener("DOMContentLoaded", function() {
+    const moreInfoBtn = document.getElementById("moreInfoBtn");
+    const hiddenSection = document.getElementById("hiddenSection");
+
+    moreInfoBtn.addEventListener("click", function() {
+        hiddenSection.classList.toggle("active");
+    });
+
+    let isHeadlineVisible = true;
+    const headline = document.getElementById("headline");
+    const subheadline = document.getElementById("subheadline");
+
+    setInterval(function() {
+        if (isHeadlineVisible) {
+            headline.style.opacity = 0;
+            subheadline.style.opacity = 1;
+        } else {
+            headline.style.opacity = 1;
+            subheadline.style.opacity = 0;
+        }
+        isHeadlineVisible = !isHeadlineVisible;
+    }, 3000);
+});
 
 
 

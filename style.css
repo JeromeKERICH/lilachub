@@ -127,7 +127,7 @@ ul {
 }
 
 .nav-links li a:hover {
-    color: var(--c-brand);
+    color: var(--c-purple);
 }
 
 .logo {
@@ -345,6 +345,9 @@ h2 {
     margin-right: 0;
 }
 
+
+
+
 @media (max-width: 768px) {
     .landing {
         flex-direction: column;
@@ -391,6 +394,16 @@ h2 {
     .hero p {
        display: none;
     }
+
+    .left-column h1,
+    .right-column h2 {
+        animation: fadeInOut 6s infinite;
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
 }
 
 
@@ -433,6 +446,7 @@ h2 {
         font-size: 18px;
     }
 }
+
 
 /*about section */
 
@@ -498,16 +512,13 @@ h2 {
     border-radius: 10px;
 }
 
-.more-content {
-    display: none;
-}
-
 .read-more {
     display: inline-block;
     margin-top: 10px;
     color: goldenrod;
     text-decoration: none;
     font-style: italic;
+    display: none;
 }
 
 .read-more:hover {
@@ -527,6 +538,14 @@ h2 {
 
     .about-con .content p {
         padding: 0;
+    }
+
+    .more-content {
+        display: none;
+    }
+
+    .read-more {
+        display: block;
     }
 
     .image, .content {
@@ -790,6 +809,7 @@ h2 {
 .arrow {
     color: gold;
     font-size: 1.2em;
+    display: none;
 }
 
 @media(max-width: 768px) {
